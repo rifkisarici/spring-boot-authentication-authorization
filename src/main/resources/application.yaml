@@ -1,0 +1,32 @@
+
+server:
+  error:
+    include-message: always
+    include-binding-errors: always
+
+spring:
+  datasource:
+    username: edel
+    password: edelmuhendislik
+    url: jdbc:postgresql://localhost:5432/argecv_ws
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+  data:
+    web:
+      pageable:
+        max-page-size: 100
+        default-page-size: 10
+
+---
+spring:
+  jpa:
+    properties:
+      javax:
+        persistence:
+          validation:
+            mode: none
